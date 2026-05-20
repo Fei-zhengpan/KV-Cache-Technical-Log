@@ -8,8 +8,10 @@ Notes on memory bottlenecks, cache compression, token selection, and hardware-aw
 
 In autoregressive decoding, the Key and Value tensor of previous tokens are reused across generation steps.
 
-#q1 need k1,v1
+q1 need k1,v1
+
 q2 need k1,v1,k2,v2
+
 ...
 
 so to aviod recomputation, we can cache the previous kv, which is so call KV cache.
