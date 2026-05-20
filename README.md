@@ -22,7 +22,7 @@ KV cache trades memory for faster decoding, but shifts the bottleneck to memory:
 
 KV cache size M_kv can be calculated as:
 
-** 𝑀_𝑘𝑣≈2∙𝐿∙𝐵∙𝑆∙𝐻_𝑘𝑣∙𝐷_ℎ𝑒𝑎𝑑∙𝑏𝑦𝑡𝑒𝑠 𝑝𝑒𝑟 𝑒𝑙𝑒𝑚𝑒𝑛𝑡 **
+𝑀_𝑘𝑣≈2∙𝐿∙𝐵∙𝑆∙𝐻_𝑘𝑣∙𝐷_ℎ𝑒𝑎𝑑∙𝑏𝑦𝑡𝑒𝑠 𝑝𝑒𝑟 𝑒𝑙𝑒𝑚𝑒𝑛𝑡
 
 𝐿: number of layers
 
@@ -35,6 +35,12 @@ KV cache size M_kv can be calculated as:
 𝐷_ℎ𝑒𝑎𝑑  : head dimension
 
 𝑏𝑦𝑡𝑒𝑠 : bytes per element
+
+Use llama-7B, FP16 as a example, 1-million (2^20) token context need 512GB memory, which is much larger than a single GPU (H100, 80GB). KV cache is one of the biggest challenge in modern LLM.
+
+# Optimizations to reduce KV cache
+
+
 
 
 
