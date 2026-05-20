@@ -22,7 +22,7 @@ KV cache trades memory for faster decoding, but shifts the bottleneck to memory:
 
 KV cache size M_kv can be calculated as:
 
-𝑀_𝑘𝑣≈2∙𝐿∙𝐵∙𝑆∙𝐻_𝑘𝑣∙𝐷_ℎ𝑒𝑎𝑑∙𝑏𝑦𝑡𝑒𝑠 𝑝𝑒𝑟 𝑒𝑙𝑒𝑚𝑒𝑛𝑡 
+**𝑀_𝑘𝑣≈2∙𝐿∙𝐵∙𝑆∙𝐻_𝑘𝑣∙𝐷_ℎ𝑒𝑎𝑑∙𝑏𝑦𝑡𝑒𝑠 𝑝𝑒𝑟 𝑒𝑙𝑒𝑚𝑒𝑛𝑡**
 
 𝐿: number of layers
 
