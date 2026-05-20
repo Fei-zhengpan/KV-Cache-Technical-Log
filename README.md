@@ -16,3 +16,31 @@ q2 need k1,v1,k2,v2
 
 so to aviod recomputation, we can cache the previous kv, which is so call KV cache.
 
+# The memory footprint of KV cache
+
+KV cache trades memory for faster decoding, but shifts the bottleneck to memory: storing and reading historical KV dominates long-context decoding. Large memory footprint also limits the maximum context length.
+
+KV cache size M_kv can be calculated as:
+
+𝑀_𝑘𝑣≈2∙𝐿∙𝐵∙𝑆∙𝐻_𝑘𝑣∙𝐷_ℎ𝑒𝑎𝑑∙𝑏𝑦𝑡𝑒𝑠 𝑝𝑒𝑟 𝑒𝑙𝑒𝑚𝑒𝑛𝑡 
+
+𝐿: number of layers
+
+𝐵: batch size
+
+𝑆 : context length
+
+𝐻_𝑘𝑣  ​: number of KV heads
+
+𝐷_ℎ𝑒𝑎𝑑  : head dimension
+
+𝑏𝑦𝑡𝑒𝑠 : bytes per element
+
+
+
+
+
+
+
+
+
